@@ -23,9 +23,9 @@ function Navbar() {
                           <NavLink className='nav-link' to="/meetinglist" >Meetings</NavLink>  </li>
                       
                           <li className="nav-item ms-5">
-                          <NavLink className='nav-link' to="/meetlist" id='btn' >SignUp</NavLink>  </li>               
+                          <NavLink className='nav-link' to="" id='btn' >SignUp</NavLink>  </li>               
                           <li className="nav-item ms-3">
-                          <NavLink className='nav-link' to="/meetlist" id='btn'>Login</NavLink>  </li>
+                          <NavLink className='nav-link' to="" id='btn'>Login</NavLink>  </li>
               
                   
       </ul>
