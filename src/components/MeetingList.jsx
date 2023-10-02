@@ -39,7 +39,7 @@ function MeetingList() {
   };
 
   const sortByDate = () => {
-    const sorted = [...sortedData].sort((a, b) => new Date(a.meetingDate) - new Date(b.meetingDate));
+    const sorted = [...sortedData].sort((a, b) => new Date(b.date) - new Date(a.date));
     setSortedData(sorted);
   };
 
@@ -92,9 +92,9 @@ function MeetingList() {
     
                   <h5 className="card-title">{item.meetingName}
                     </h5>
-                  <h6>Country Head : { item.countryHeadName}</h6>
+                  <h6>Location : {item.location}</h6>
                   <p className="card-text">Date: {item.date}</p>
-                  <p className="card-text">{item.description } Country: {item.countryName}</p>
+                  <p className="card-text">Description : { item.description } </p>
                   
                  
                   <li className='nav-item '><NavLink to={`/details/${ item.id }`} >
