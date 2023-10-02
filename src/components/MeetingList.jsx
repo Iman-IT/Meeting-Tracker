@@ -11,7 +11,7 @@ function MeetingList() {
   const [loading, setLoading] = useState(true);
   const [ error, setError ] = useState( null );
  
-  const currentDate = new Date();
+
 
   useEffect(() => {
     // Simulate a fetch request (replace this with your actual data fetching logic)
@@ -24,7 +24,7 @@ function MeetingList() {
         setError(error);
         setLoading(false);
       }
-    }, 1000); // Simulating a delay for loading
+    },); // Simulating a delay for loading
   }, []);
 
  
@@ -33,11 +33,13 @@ function MeetingList() {
     const selectedOption = e.target.value;
     if (selectedOption === 'date') {
       sortByDate();
-    } else if (selectedOption === 'alphabet') {
+    }
+    else if ( selectedOption === 'alphabet' )
+    {
       sortAlphabetically();
     }
   };
-
+  const currentDate = new Date();
   const sortByDate = () => {
     const sorted = [...sortedData].sort((a, b) => new Date(b.date) - new Date(a.date));
     setSortedData(sorted);
@@ -92,7 +94,7 @@ function MeetingList() {
     
                   <h5 className="card-title">{item.meetingName}
                     </h5>
-                  <h6>Location : {item.location}</h6>
+                  <h6>Country : {item.countryName}</h6>
                   <p className="card-text">Date: {item.date}</p>
                   <p className="card-text">Description : { item.description } </p>
                   
