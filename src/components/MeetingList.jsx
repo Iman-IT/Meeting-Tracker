@@ -43,22 +43,32 @@ function MeetingList() {
     setSortedData(sorted);
   };
 
+  // const sortAlphabetically = () => {
+  //   const sorted = [...sortedData].sort((a, b) => a.countryName.localeCompare(b.countryName));
+  //   setSortedData( sorted );
+  //   console.log( sortedData );
+  // };
   const sortAlphabetically = () => {
-    const sorted = [...sortedData].sort((a, b) => a.countryName.localeCompare(b.countryName));
+    const sorted = [...sortedData].sort((a, b) => {
+      if (a.countryName && b.countryName) {
+        return a.countryName.localeCompare(b.countryName);
+      }
+      return 0; // If either countryName is undefined, consider them equal
+    });
     setSortedData(sorted);
   };
 
   // if (loading) {
-  //   return alert( 'Loading...' );
+  //    alert( 'Loading...' );
   // }
 
   if (error) {
-    return <div>Error: {error.message} </div>;
+    alert( error.message );
   }
   if ( !loading && !error )
   {
    
-    setTimeout(() => alert('Data fetched successfully!'), 0);
+    alert('Data fetched successfully!');
   }
 
   return (
