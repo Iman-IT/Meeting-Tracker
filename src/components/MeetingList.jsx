@@ -1,7 +1,6 @@
 import React, { useState ,useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
 import data from './data.json';
-<link rel="stylesheet" href="list.css" />
 import styled from 'styled-components';
 import { GlobalStyles } from '../GlobalStyles';
 
