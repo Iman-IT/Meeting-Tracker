@@ -24,14 +24,16 @@ function MeetingDetail({ data }) {
             <h5> <p>Country Head:</p> { meeting.countryHeadName }   </h5>
     
             <h5> <p>Country:</p>  { meeting.countryName}</h5>
+               <p><span> Date:</span> {meeting.date} </h8>
             </div>
             <div className="col-12 col-md-6">
             <h5> <p>Second Country Head:</p>  { meeting.secondCountryHeadName }   </h5>
     
     <h5> <p>Second Country:</p>  { meeting.secondCountryName}</h5>
+                <p><span> Location:</span> { meeting.location} </h8>
             </div>
             </div>
-            <h8><span> Date:</span> {meeting.date} </h8>
+           
         </div>
         </div>
       </div></Wrapper>
