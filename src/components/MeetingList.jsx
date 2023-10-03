@@ -1,30 +1,31 @@
 import React, { useState ,useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
 import data from './data.json';
+<link rel="stylesheet" href="list.css" />
 import styled from 'styled-components';
 import { GlobalStyles } from '../GlobalStyles';
 
 function MeetingList() {
-  //const [ sortedData, setSortedData ] = useState( data );
+
   const [sortedData, setSortedData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [ error, setError ] = useState( null );
  
-
-
   useEffect(() => {
-    // Simulate a fetch request (replace this with your actual data fetching logic)
     setTimeout(() => {
       try {
-        // Assuming data.json is available and contains valid JSON
         setSortedData(data);
-        setLoading(false);
+        setLoading( false );
+        alert('Data fetched successfully!');
+      
       } catch (error) {
         setError(error);
-        setLoading(false);
+        setLoading( false );
+        alert( error.message );
       }
-    },); // Simulating a delay for loading
-  }, []);
+    }, 1000);
+  }, []); // Empty dependency array means this effect runs once on component mount
+  
 
  
 
@@ -63,14 +64,14 @@ function MeetingList() {
   //    alert( 'Loading...' );
   // }
 
-  if (error) {
-    alert( error.message );
-  }
-  if ( !loading && !error )
-  {
+  // if (error) {
+  //   alert( error.message );
+  // }
+  // if ( !loading && !error )
+  // {
    
-    alert('Data fetched successfully!');
-  }
+  //   alert('Data fetched successfully!');
+  // }
 
   return (
     <>
@@ -99,7 +100,7 @@ function MeetingList() {
                   
                  
                   <li className='nav-item '><NavLink to={`/details/${ item.id }`} >
-                   <a href="" id='btn' className='px-2 py-2'> Details</a>
+                   <a  id='btn' className='px-2 py-2'> Details</a>
                     {new Date( item.date ) > currentDate ? (
                   
                       <span className="text-white float-right ms-5 px-3 py-2 bg-success border">Upcoming</span> )
